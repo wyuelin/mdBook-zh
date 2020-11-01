@@ -1,0 +1,349 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="sidebar-visible no-js">
+
+<head>
+    <!-- Book generated using mdBook -->
+    <meta charset="UTF-8">
+    <title>mdBook 特殊功能 - mdBook 中文文档</title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta name="description" content="mdbook :) markdown生成记. 就像Gitbook, 但专为Rust设计">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="shortcut icon" href="../">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/chrome.css">
+    <link rel="stylesheet" href="../css/print.css" media="print">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+        rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+    <!-- Highlight.js Stylesheets -->
+    <link rel="stylesheet" href="../highlight.css">
+    <link rel="stylesheet" href="../tomorrow-night.css">
+    <link rel="stylesheet" href="../ayu-highlight.css">
+
+    <!-- Custom theme stylesheets -->
+    
+
+    
+    <!-- MathJax -->
+    <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+</head>
+
+<body class="light">
+    <!-- Provide site root to javascript -->
+    <script type="text/javascript">var path_to_root = "../";</script>
+
+    <!-- Work around some values being stored in localStorage wrapped in quotes -->
+    <script type="text/javascript">
+        try {
+            var theme = localStorage.getItem('mdbook-theme');
+            var sidebar = localStorage.getItem('mdbook-sidebar');
+
+            if (theme.startsWith('"') && theme.endsWith('"')) {
+                localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+            }
+
+            if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+            }
+        } catch (e) { }
+    </script>
+
+    <!-- Set the theme before any content is loaded, prevents flash -->
+    <script type="text/javascript">
+        var theme;
+        try { theme = localStorage.getItem('mdbook-theme'); } catch (e) { }
+        if (theme === null || theme === undefined) { theme = 'light'; }
+        document.body.className = theme;
+        document.querySelector('html').className = theme + ' js';
+    </script>
+
+    <!-- Hide / unhide sidebar before it is displayed -->
+    <script type="text/javascript">
+        var html = document.querySelector('html');
+        var sidebar = 'hidden';
+        if (document.body.clientWidth >= 1080) {
+            try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch (e) { }
+            sidebar = sidebar || 'visible';
+        }
+        html.classList.remove('sidebar-visible');
+        html.classList.add("sidebar-" + sidebar);
+    </script>
+
+    <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <ol class="chapter"><li class="chapter-item expanded "><a href="../README.zh.html"><strong aria-hidden="true">1.</strong> mdbook</a></li><li class="chapter-item expanded "><a href="../cli/README.zh.html"><strong aria-hidden="true">2.</strong> 命令行工具</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../cli/init.zh.html"><strong aria-hidden="true">2.1.</strong> init</a></li><li class="chapter-item expanded "><a href="../cli/build.zh.html"><strong aria-hidden="true">2.2.</strong> build</a></li><li class="chapter-item expanded "><a href="../cli/watch.zh.html"><strong aria-hidden="true">2.3.</strong> watch</a></li><li class="chapter-item expanded "><a href="../cli/serve.zh.html"><strong aria-hidden="true">2.4.</strong> serve</a></li><li class="chapter-item expanded "><a href="../cli/test.zh.html"><strong aria-hidden="true">2.5.</strong> test</a></li><li class="chapter-item expanded "><a href="../cli/clean.zh.html"><strong aria-hidden="true">2.6.</strong> clean</a></li></ol></li><li class="chapter-item expanded "><a href="../format/README.zh.html"><strong aria-hidden="true">3.</strong> 格式</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../format/summary.zh.html"><strong aria-hidden="true">3.1.</strong> SUMMARY.md</a></li><li class="chapter-item expanded "><a href="../format/config.zh.html"><strong aria-hidden="true">3.2.</strong> 配置</a></li><li class="chapter-item expanded "><a href="../format/theme/README.zh.html"><strong aria-hidden="true">3.3.</strong> Theme-主题</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../format/theme/index-hbs.zh.html"><strong aria-hidden="true">3.3.1.</strong> index.hbs</a></li><li class="chapter-item expanded "><a href="../format/theme/syntax-highlighting.zh.html"><strong aria-hidden="true">3.3.2.</strong> 语法高亮显示</a></li><li class="chapter-item expanded "><a href="../format/theme/editor.zh.html"><strong aria-hidden="true">3.3.3.</strong> 编辑器</a></li></ol></li><li class="chapter-item expanded "><a href="../format/mathjax.zh.html"><strong aria-hidden="true">3.4.</strong> MathJax 支持</a></li><li class="chapter-item expanded "><a href="../format/mdbook.zh.html" class="active"><strong aria-hidden="true">3.5.</strong> mdBook 特殊功能</a></li></ol></li><li class="chapter-item expanded "><a href="../continuous-integration.zh.html"><strong aria-hidden="true">4.</strong> 持续集成</a></li><li class="chapter-item expanded "><a href="../for_developers/README.zh.html"><strong aria-hidden="true">5.</strong> 对开发者说</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../for_developers/preprocessors.zh.html"><strong aria-hidden="true">5.1.</strong> 预处理程序</a></li><li class="chapter-item expanded "><a href="../for_developers/backends.zh.html"><strong aria-hidden="true">5.2.</strong> 备用后端</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="../misc/contributors.zh.html">贡献者</a></li></ol>
+    </nav>
+
+    <div id="page-wrapper" class="page-wrapper">
+
+        <div class="page">
+            
+            <div id="menu-bar" class="menu-bar">
+                <div id="menu-bar-sticky-container">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents"
+                            aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <!-- START - Rust Cookbook customization -->
+                        <button id="edit-button" class="icon-button" type="button" title="Fork and edit" aria-label="Fork and edit"
+                            aria-haspopup="true" aria-expanded="false" aria-controls="edit">
+                            <i class="fa fa-edit">Edit</i>
+                        </button>
+                        <!-- END - Rust Cookbook customization -->
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme"
+                            aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light <span class="default">(default)</span></button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                            aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">mdBook 中文文档</h1>
+                    
+                        <div class="right-buttons">
+                            <a href="../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+            
+            <div id="search-wrapper" class="hidden">
+                <form id="searchbar-outer" class="searchbar-outer">
+                    <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+                        aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                </form>
+                <div id="searchresults-outer" class="searchresults-outer hidden">
+                    <div id="searchresults-header" class="searchresults-header"></div>
+                    <ul id="searchresults">
+                    </ul>
+                </div>
+            </div>
+            
+
+            <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+            <script type="text/javascript">
+                document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                    link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                });
+            </script>
+
+            <!-- // START - Rust Cookbook customization -->
+            <script>
+                document.getElementById("edit-button").addEventListener("click", function () {
+                    var editWindow = window.open("https://github.com/chinanf-boy/mdbook-zh/edit/master/src/format/mdbook.zh.md");
+                });</script>
+            <!-- // END - Rust Cookbook customization -->
+
+            <div id="content" class="content">
+                <main>
+                    <h1><a class="header" href="#mdbook-特有-markdown" id="mdbook-特有-markdown">mdBook 特有 markdown</a></h1>
+<h2><a class="header" href="#隐藏代码行数" id="隐藏代码行数">隐藏代码行数</a></h2>
+<p>mdBook 中有一个功能,可以通过在代码行前加上<code>#</code>来隐藏代码行.</p>
+<pre><code class="language-bash"># fn main() {
+    let x = 5;
+    let y = 6;
+
+    println!(&quot;{}&quot;, x + y);
+# }
+</code></pre>
+<p>渲染为</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">fn main() {
+</span>    let x = 5;
+    let y = 7;
+
+    println!(&quot;{}&quot;, x + y);
+<span class="boring">}
+</span></code></pre></pre>
+<h2><a class="header" href="#include包含文件内容" id="include包含文件内容">include，包含文件内容</a></h2>
+<p>使用以下语法,您可以将文件包含到您的书中:</p>
+<pre><code class="language-hbs">{{#include file.rs}}
+</code></pre>
+<p>文件的路径必须是 <strong>当前</strong> 源文件的 <strong>相对</strong> 路径.</p>
+<p>通常,此命令用于包含代码段和示例。在这种情况下, 可指定文件的包含部分,例如其中只包含示例的相关行.</p>
+<p>mdBook 会将 include 文件 解释成 markdown。 自从 include 命令常用来插入代码片段和示例，你会习惯使用 <code>```</code> 包裹这些命令，显示（include）文件的内容，而不是去解释它们。</p>
+<pre><code class="language-hbs">```
+{{#include file.rs}}
+```
+</code></pre>
+<h2><a class="header" href="#只-include-一个文件的部分内容" id="只-include-一个文件的部分内容">只 Include 一个文件的部分内容</a></h2>
+<p>常见要求是你只要文件的部分内容 e.g. 以行编号作为例子。我们对部分内容插入，支持了几种模式:</p>
+<pre><code class="language-hbs">{{#include file.rs:2}}
+{{#include file.rs::10}}
+{{#include file.rs:2:}}
+{{#include file.rs:2:10}}
+</code></pre>
+<p>我们支持四种不同的决定<code>file.rs</code>部分模式:</p>
+<ul>
+<li>第一个命令仅包含文件中的第二行.</li>
+<li>第二个命令包含直到第 10 行的所有行。即,从 11 到文件末尾的行被省略.</li>
+<li>第三个命令包含第 2 行的所有行,即省略第一行.</li>
+<li>最后一个命令包含摘录<code>file.rs</code>由 2 到 10 行组成.</li>
+</ul>
+<p>为了防止文件的修改（行数的变化），导致图书呈现内容的变化, 你还可以使用锚点(anchor)，选择一个特定的部分，
+行数就不再相关。
+一个 anchor 是一对匹配的行。 匹配的内容正是正则式，如开头的行anchor必须匹配”ANCHOR:\s*[\w_-]+” and similarly 结尾行则是 “ANCHOR_END:\s*[\w_-]+”。只要内容匹配了，注释的写法格式倒是没有限制。</p>
+<p>考虑下面 要 include 的文件:</p>
+<pre><code class="language-rs">/* ANCHOR: all */
+
+// ANCHOR: component
+struct Paddle {
+    hello: f32,
+}
+// ANCHOR_END: component
+
+////////// ANCHOR: system
+impl System for MySystem { ... }
+////////// ANCHOR_END: system
+
+/* ANCHOR_END: all */
+</code></pre>
+<p>给个示例，你要做的:</p>
+<pre><code class="language-hbs">Here is a component:
+```rust,no_run,noplaypen
+{{#include file.rs:component}}
+```
+
+Here is a system:
+```rust,no_run,noplaypen
+{{#include file.rs:system}}
+```
+
+This is the full file.
+```rust,no_run,noplaypen
+{{#include file.rs:all}}
+```
+</code></pre>
+<p>在已 include anchor 内的，若还包含 anchor 匹配模式，则会被忽略。</p>
+<h2><a class="header" href="#插入可运行的-rust-文件" id="插入可运行的-rust-文件">插入可运行的 Rust 文件</a></h2>
+<p>使用以下语法,您可以将可运行的 Rust 文件插入到您的书中:</p>
+<pre><code class="language-hbs">{{#playpen file.rs}}
+</code></pre>
+<p>Rust 文件的路径必须是当前源文件的相对路径.</p>
+<p>点击播放后,代码段将被发送到<a href="https://play.rust-lang.org/">rust 的游乐场</a>编译和运行。结果被返回，并直接显示在代码下方.</p>
+<p>以下是代码段的渲染的样子:</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    println!(&quot;Hello World!&quot;);
+<span class="boring">
+</span><span class="boring">   // You can even hide lines! :D
+</span><span class="boring">  println!(&quot;I am hidden! Expand the code snippet to see me&quot;);
+</span>}
+
+</code></pre></pre>
+<blockquote>
+<p>试试 点击 播放箭头</p>
+</blockquote>
+<h3><a class="header" href="#要可编辑请添加" id="要可编辑请添加">要可编辑，请添加</a></h3>
+<pre><code class="language-hbs">{{#playpen example.rs editable no_run should_panic}}
+</code></pre>
+<pre><pre class="playground"><code class="language-rust editable">fn main() {
+    println!(&quot;Hello World!&quot;);
+<span class="boring">
+</span><span class="boring">   // You can even hide lines! :D
+</span><span class="boring">  println!(&quot;I am hidden! Expand the code snippet to see me&quot;);
+</span>}
+
+</code></pre></pre>
+
+                </main>
+
+                <nav class="nav-wrapper" aria-label="Page navigation">
+                    <!-- Mobile navigation buttons -->
+                    
+                    <a rel="prev" href="../format/mathjax.zh.html" class="mobile-nav-chapters previous" title="Previous chapter"
+                        aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    
+
+                    
+                    <a rel="next" href="../continuous-integration.zh.html" class="mobile-nav-chapters next" title="Next chapter"
+                        aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                    
+
+                    <div style="clear: both"></div>
+                </nav>
+            </div>
+        </div>
+
+        <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            
+            <a href="../format/mathjax.zh.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter"
+                aria-keyshortcuts="Left">
+                <i class="fa fa-angle-left"></i>
+            </a>
+            
+
+            
+            <a href="../continuous-integration.zh.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter"
+                aria-keyshortcuts="Right">
+                <i class="fa fa-angle-right"></i>
+            </a>
+            
+        </nav>
+
+    </div>
+
+    
+
+    
+    <!-- Google Analytics Tag -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-128555056-1"></script>
+    
+    <script type="text/javascript">
+        var localAddrs = ["localhost", "127.0.0.1", ""];
+        if (localAddrs.indexOf(document.location.hostname) === -1) {
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+
+            gtag('config', 'UA-128555056-1');
+        }
+    </script>
+    
+
+    
+
+    
+    <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+    
+
+    <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+    <!-- Custom JS scripts -->
+    
+
+    
+
+</body>
+
+</html>
