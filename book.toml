@@ -5,7 +5,7 @@ authors = ["Mathieu David", "Michael-F-Bryan", "译:yobrave"]
 language = "zh-CN"
 
 [build]
-build-dir = "docs"
+build-dir = "book"
 create-missing = true
 use-default-preprocessors = false
 
@@ -17,7 +17,7 @@ theme = "src/theme"
 curly-quotes = true
 google-analytics = "UA-128555056-1"
 # additional-css = ["src/theme/custom.css"]
-git_repository_url = "https://github.com/chinanf-boy/mdbook-zh"
+git_repository_url = "https://github.com/wyuelin/mdbook-zh"
 git_repository_icon = "fa-github"
 
 [output.html.playpen]
